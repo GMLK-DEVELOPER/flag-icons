@@ -1,9 +1,9 @@
 {
-  "name": "lipis/flag-icons",
-  "description": "A curated collection of all country flags in SVG — plus the CSS for easier integration.",
+  "name": "gmlk-developer/flag-icons",
+  "description": "A curated collection of all country flags in SVG, plus the CSS for easier integration.",
   "type": "library",
   "license": "MIT",
-  "homepage": "https://flagicons.lipis.dev",
+  "homepage": "https://github.com/GMLK-DEVELOPER/flag-icons",
   "keywords": [
     "css",
     "svg",
@@ -13,12 +13,11 @@
   ],
   "authors": [
     {
-      "name": "Panayiotis Lipiridis",
-      "email": "lipiridis@gmail.com",
+      "name": "GMLK-DEVELOPER",
       "role": "Lead"
     }
   ],
   "support": {
-    "issues": "https://github.com/lipis/flag-icons/issues"
+    "issues": "https://github.com/GMLK-DEVELOPER/flag-icons/issues"
   }
 }

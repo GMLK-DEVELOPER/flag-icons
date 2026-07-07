@@ -662,18 +662,16 @@ main.container {
 }
 
 .format-switch {
-  top: auto;
-  right: auto;
-  bottom: 18px;
-  left: 50%;
-  z-index: 50;
+  position: static;
   flex-direction: row;
+  flex: 0 0 auto;
+  overflow: hidden;
   border: 1px solid rgba(216, 225, 236, 0.98);
   border-radius: var(--border-radius);
-  background: rgba(255, 255, 255, 0.94);
-  box-shadow: var(--shadow);
-  transform: translateX(-50%);
-  backdrop-filter: blur(14px);
+  background: #ffffff;
+  box-shadow: none;
+  transform: none;
+  backdrop-filter: none;
 }
 
 .format-switch button {
@@ -851,24 +849,29 @@ main.container {
   }
 
   .install-box {
-    align-items: stretch;
-    flex-direction: column;
-    gap: 10px;
-    padding: 14px;
+    align-items: center;
+    flex-direction: row;
+    gap: 8px;
+    padding: 8px;
   }
 
   .install-box code {
+    min-width: 0;
     width: 100%;
-    padding-bottom: 2px;
   }
 
   .copy-btn {
-    width: 100%;
+    flex: 0 0 auto;
+    width: auto;
   }
 
   .action-buttons {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .usage-btn {
+    grid-column: 1 / -1;
   }
 
   .catalog-header h2 {
@@ -885,7 +888,8 @@ main.container {
   }
 
   .filter-dropdown,
-  .filter-btn {
+  .filter-btn,
+  .format-switch {
     width: 100%;
   }
 
@@ -927,10 +931,15 @@ main.container {
 @media (max-width: 480px) {
   .topbar {
     gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .topbar-actions {
+    display: none;
   }
 
   .brand-mark span:last-child {
-    display: none;
+    display: inline;
   }
 
   .header h1 {
@@ -938,23 +947,35 @@ main.container {
   }
 
   .hero-stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .hero-stats div {
-    grid-template-columns: auto 1fr;
-    align-items: baseline;
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+
+  .hero-stats strong {
+    font-size: 1.05rem;
+  }
+
+  .hero-stats span {
+    font-size: 0.72rem;
+  }
+
+  .btn,
+  .usage-btn {
+    min-height: 40px;
+    padding: 0 10px;
+    font-size: 0.82rem;
   }
 
   .flags-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .format-switch {
-    bottom: 10px;
-  }
-
   .format-switch button {
-    min-width: 64px;
+    flex: 1;
+    min-width: 0;
   }
 }

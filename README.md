@@ -1,10 +1,10 @@
 # flag-icons
 
-> A curated collection of all country flags in SVG — plus the CSS for easier integration. See the [demo](https://flagicons.lipis.dev).
+> A curated collection of all country flags in SVG, plus the CSS for easier integration. See the [repository](https://github.com/GMLK-DEVELOPER/flag-icons).
 
 ## Install
 
-You can either [download](https://github.com/lipis/flag-icons/archive/main.zip) the whole project as is or install it via npm or Yarn:
+You can either [download](https://github.com/GMLK-DEVELOPER/flag-icons/archive/main.zip) the whole project as is or install it via npm or Yarn:
 
 ```bash
 npm install flag-icons
@@ -25,7 +25,7 @@ or use CDN:
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css"
+  href="https://cdn.jsdelivr.net/gh/GMLK-DEVELOPER/flag-icons@main/css/flag-icons.min.css"
 />
 ```
 
@@ -44,7 +44,7 @@ or use SASS:
 );
 ```
 
-You can find all available variables in [`sass/_variables.scss`](sass/_variables.scss).
+You can find all available variables in [`sass/_variables.scss`](https://github.com/GMLK-DEVELOPER/flag-icons/blob/main/sass/_variables.scss).
 
 For using the flags inline with text add the classes `.fi` and `.fi-xx` (where `xx` is the [ISO 3166-1-alpha-2 code](https://www.iso.org/obp/ui/#search/code/) of a country) to an empty `<span>`. If you want to have a squared version flag then add the class `fis` as well. Example:
 
@@ -78,7 +78,7 @@ To serve it on `localhost:8000`
 $ yarn start
 ```
 
-To have only specific countries in the css file, remove the ones that you don't need from the [`_flag-icons-list.scss`](sass/_flag-icons-list.scss) file and build it again.
+To have only specific countries in the css file, remove the ones that you don't need from the [`_flag-icons-list.scss`](https://github.com/GMLK-DEVELOPER/flag-icons/blob/main/sass/_flag-icons-list.scss) file and build it again.
 
 ## Credits
 

@@ -22,16 +22,19 @@
     <!-- Meta tags -->
     <meta property="og:title" content="flag-icons: Free Country Flags in SVG" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://flagicons.lipis.dev" />
+    <meta
+      property="og:url"
+      content="https://github.com/GMLK-DEVELOPER/flag-icons"
+    />
     <meta
       property="og:description"
       content="A curated collection of all country flags in SVG"
     />
     <meta
       property="og:image"
-      content="https://flagicons.lipis.dev/assets/og.png"
+      content="https://raw.githubusercontent.com/GMLK-DEVELOPER/flag-icons/main/assets/og.png"
     />
-    <link rel="canonical" href="https://flagicons.lipis.dev" />
+    <link rel="canonical" href="https://github.com/GMLK-DEVELOPER/flag-icons" />
     <link rel="icon" href="/favicon.ico" />
 
     <!-- Main styles -->
@@ -762,8 +765,10 @@
           </a>
 
           <div class="topbar-actions">
-            <a href="https://github.com/lipis/flag-icons">GitHub</a>
-            <a href="https://github.com/lipis/flag-icons/archive/main.zip">
+            <a href="https://github.com/GMLK-DEVELOPER/flag-icons">GitHub</a>
+            <a
+              href="https://github.com/GMLK-DEVELOPER/flag-icons/archive/main.zip"
+            >
               Download
             </a>
           </div>
@@ -825,17 +830,18 @@
             <button class="usage-btn" type="button">
               <i class="bi bi-terminal"></i> Usage guide
             </button>
-            <a href="https://github.com/lipis/flag-icons" class="btn">
+            <a href="https://github.com/GMLK-DEVELOPER/flag-icons" class="btn">
               <i class="bi bi-github"></i> View on GitHub
             </a>
             <a
-              href="https://github.com/lipis/flag-icons/archive/main.zip"
+              href="https://github.com/GMLK-DEVELOPER/flag-icons/archive/main.zip"
               class="btn btn-secondary"
             >
               <i class="bi bi-cloud-arrow-down"></i> Download Flags
             </a>
           </div>
         </div>
+
       </div>
     </header>
 
@@ -883,6 +889,11 @@
             <div class="filter-option" data-filter="non-iso">Non-ISO Flags</div>
           </div>
         </div>
+
+        <div class="format-switch" aria-label="Flag format">
+          <button id="format-4x3" class="active" title="4:3 format">4:3</button>
+          <button id="format-1x1" title="1:1 format">1:1</button>
+        </div>
       </div>
 
       <section id="iso-section" class="flag-section">
@@ -914,11 +925,6 @@
       </div>
     </main>
 
-    <div class="format-switch">
-      <button id="format-4x3" class="active" title="4:3 format">4:3</button>
-      <button id="format-1x1" title="1:1 format">1:1</button>
-    </div>
-
     <div id="copy-tooltip" class="tooltip">Copied to clipboard!</div>
 
     <!-- Enhanced Usage Modal -->
@@ -928,50 +934,91 @@
         <h3 class="modal-title">How to use flag-icons</h3>
 
         <div class="modal-section">
-          <h4 class="modal-section-title">1. Import the CSS</h4>
-          <p>
-            First, include the CSS in your project using one of these methods:
-          </p>
+          <h4 class="modal-section-title">1. Import CSS</h4>
+          <p>First, you need to import css:</p>
 
           <div class="code-block">
             <div class="code-header">
               <span class="code-label">JavaScript / Module</span>
               <button
                 class="code-copy-btn"
-                data-code='import "flag-icons/css/flag-icons.min.css";'
+                data-code='import "/node_modules/flag-icons/css/flag-icons.min.css";'
               >
                 <i class="bi bi-clipboard"></i> Copy
               </button>
             </div>
             <div class="code-content">
-              <pre><span class="token keyword">import</span> <span class="token string">"flag-icons/css/flag-icons.min.css"</span>;</pre>
+              <pre><span class="token keyword">import</span> <span class="token string">"/node_modules/flag-icons/css/flag-icons.min.css"</span>;</pre>
             </div>
           </div>
+
+          <p>or use CDN:</p>
 
           <div class="code-block">
             <div class="code-header">
               <span class="code-label">HTML / CDN</span>
               <button
                 class="code-copy-btn"
-                data-code='<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.5.0/css/flag-icons.min.css" />'
+                data-code='<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/GMLK-DEVELOPER/flag-icons@main/css/flag-icons.min.css" />'
               >
                 <i class="bi bi-clipboard"></i> Copy
               </button>
             </div>
             <div class="code-content">
               <pre><span class="token tag">&lt;<span class="token attribute">link</span> <span class="token attribute">rel</span>=<span class="token value">"stylesheet"</span>
-<span class="token attribute">href</span>=<span class="token value">"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.5.0/css/flag-icons.min.css"</span> /&gt;</span></pre>
+<span class="token attribute">href</span>=<span class="token value">"https://cdn.jsdelivr.net/gh/GMLK-DEVELOPER/flag-icons@main/css/flag-icons.min.css"</span> /&gt;</span></pre>
             </div>
           </div>
+
+          <p>or use SASS:</p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span class="code-label">SASS</span>
+              <button
+                class="code-copy-btn"
+                data-code='@use "node_modules/flag-icons/sass/flag-icons";
+
+@use "node_modules/flag-icons/sass/flag-icons" with (
+  $flag-icons-path: "node_modules/flag-icons/flags",
+  $flag-icons-included-countries: ("gr", "de", "gb")
+);'
+              >
+                <i class="bi bi-clipboard"></i> Copy
+              </button>
+            </div>
+            <div class="code-content">
+              <pre><span class="token keyword">@use</span> <span class="token string">"node_modules/flag-icons/sass/flag-icons"</span>;
+
+<span class="token comment">// or with custom configuration</span>
+<span class="token keyword">@use</span> <span class="token string">"node_modules/flag-icons/sass/flag-icons"</span> <span class="token keyword">with</span> (
+  <span class="token comment">// Override path to flags directory</span>
+  $flag-icons-path: <span class="token string">"node_modules/flag-icons/flags"</span>,
+
+  <span class="token comment">// Include only specific country flags</span>
+  $flag-icons-included-countries: (<span class="token string">"gr"</span>, <span class="token string">"de"</span>, <span class="token string">"gb"</span>)
+);</pre>
+            </div>
+          </div>
+
+          <p>
+            You can find all available variables in
+            <a
+              href="https://github.com/GMLK-DEVELOPER/flag-icons/blob/main/sass/_variables.scss"
+              >sass/_variables.scss</a
+            >.
+          </p>
         </div>
 
         <div class="modal-section">
-          <h4 class="modal-section-title">2. Use in your HTML</h4>
+          <h4 class="modal-section-title">2. Use flags inline</h4>
           <p>
-            Add the classes <code class="inline-code">.fi</code> and
-            <code class="inline-code">.fi-xx</code> to an empty span to display
-            a flag inline. Replace <code class="inline-code">xx</code> with the
-            ISO 3166-1-alpha-2 code of the country.
+            For using the flags inline with text add the classes
+            <code class="inline-code">.fi</code> and
+            <code class="inline-code">.fi-xx</code> where
+            <code class="inline-code">xx</code> is the ISO 3166-1-alpha-2 code
+            of a country. If you want a squared version flag, add
+            <code class="inline-code">fis</code> as well.
           </p>
 
           <div class="code-block">
@@ -982,14 +1029,9 @@
               </button>
             </div>
             <div class="code-content">
-              <pre><span class="token tag">&lt;<span class="token attribute">span</span> <span class="token attribute">class</span>=<span class="token value">"fi fi-us"</span>&gt;</span><span class="token tag">&lt;/<span class="token attribute">span</span>&gt;</span> United States</pre>
+              <pre><span class="token tag">&lt;<span class="token attribute">span</span> <span class="token attribute">class</span>=<span class="token value">"fi fi-gr"</span>&gt;</span><span class="token tag">&lt;/<span class="token attribute">span</span>&gt;</span></pre>
             </div>
           </div>
-
-          <p>
-            For square format flags, add the
-            <code class="inline-code">fis</code> class:
-          </p>
 
           <div class="code-block">
             <div class="code-header">
@@ -999,25 +1041,102 @@
               </button>
             </div>
             <div class="code-content">
-              <pre><span class="token tag">&lt;<span class="token attribute">span</span> <span class="token attribute">class</span>=<span class="token value">"fi fi-us fis"</span>&gt;</span><span class="token tag">&lt;/<span class="token attribute">span</span>&gt;</span> United States</pre>
+              <pre><span class="token tag">&lt;<span class="token attribute">span</span> <span class="token attribute">class</span>=<span class="token value">"fi fi-gr fis"</span>&gt;</span><span class="token tag">&lt;/<span class="token attribute">span</span>&gt;</span></pre>
             </div>
           </div>
         </div>
 
         <div class="modal-section">
-          <h4 class="modal-section-title">3. Tips</h4>
+          <h4 class="modal-section-title">3. Background flags</h4>
+          <p>
+            You could also apply this to any element, but in that case use
+            <code class="inline-code">fib</code> instead of
+            <code class="inline-code">fi</code>. This adds the correct
+            background with these CSS properties:
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span class="code-label">Generated CSS</span>
+              <button
+                class="code-copy-btn"
+                data-code="background-size: contain;
+background-position: 50%;
+background-repeat: no-repeat;"
+              >
+                <i class="bi bi-clipboard"></i> Copy
+              </button>
+            </div>
+            <div class="code-content">
+              <pre>background-size: contain;
+background-position: 50%;
+background-repeat: no-repeat;</pre>
+            </div>
+          </div>
+
+          <p>
+            The flag appears in the middle of an element, so set the correct 4
+            by 3 size manually. For square flags, add the
+            <code class="inline-code">flag-icon-squared</code> class.
+          </p>
+        </div>
+
+        <div class="modal-section">
+          <h4 class="modal-section-title">4. Development</h4>
+          <p>
+            Run <code class="inline-code">yarn</code> after cloning the project,
+            then use these commands:
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span class="code-label">Build SCSS</span>
+              <button class="code-copy-btn" data-code="yarn build">
+                <i class="bi bi-clipboard"></i> Copy
+              </button>
+            </div>
+            <div class="code-content">
+              <pre>yarn build</pre>
+            </div>
+          </div>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span class="code-label">Serve localhost:8000</span>
+              <button class="code-copy-btn" data-code="yarn start">
+                <i class="bi bi-clipboard"></i> Copy
+              </button>
+            </div>
+            <div class="code-content">
+              <pre>yarn start</pre>
+            </div>
+          </div>
+
+          <p>
+            To include only specific countries in the CSS file, remove the ones
+            you do not need from
+            <a
+              href="https://github.com/GMLK-DEVELOPER/flag-icons/blob/main/sass/_flag-icons-list.scss"
+              >_flag-icons-list.scss</a
+            >
+            and build it again.
+          </p>
+        </div>
+
+        <div class="modal-section">
+          <h4 class="modal-section-title">Credits</h4>
           <ul>
-            <li>Click on any flag on this page to copy its HTML code</li>
             <li>
-              For applying flags as backgrounds, use the
-              <code class="inline-code">fib</code> class
+              This project would not exist without the now deleted SVG flags
+              collection by <a href="https://github.com/koppi">koppi</a>.
             </li>
             <li>
-              All flags are available in both 4:3 and 1:1 (square) formats
-            </li>
-            <li>
-              Use the built-in search and filter functionality to find specific
-              flags
+              Thank you
+              <a href="https://twitter.com/andrejsabrickis"
+                >Andrejs Abrickis</a
+              >
+              for providing the flag-icons name on
+              <a href="https://www.npmjs.com/package/flag-icons">npm</a>.
             </li>
           </ul>
         </div>
@@ -1028,10 +1147,13 @@
       <div class="container">
         <p>
           Released under the
-          <a href="https://github.com/lipis/flag-icons/blob/main/LICENSE"
+          <a href="https://github.com/GMLK-DEVELOPER/flag-icons/blob/main/LICENSE"
             >MIT License</a
           >
-          by <a href="https://github.com/lipis">Panayiotis Lipiridis</a>
+          in
+          <a href="https://github.com/GMLK-DEVELOPER/flag-icons"
+            >GMLK-DEVELOPER/flag-icons</a
+          >
         </p>
       </div>
     </footer>
@@ -1176,9 +1298,9 @@
 
       const setupCopyButtons = () => {
         document.getElementById("copy-standard-code").dataset.code =
-          `<span class="fi fi-us"></span> United States`;
+          `<span class="fi fi-gr"></span>`;
         document.getElementById("copy-square-code").dataset.code =
-          `<span class="fi fi-us fis"></span> United States`;
+          `<span class="fi fi-gr fis"></span>`;
       };
 
       // Filter flags based on search input and continent
