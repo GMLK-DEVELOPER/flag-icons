@@ -7,9 +7,9 @@
 You can either [download](https://github.com/GMLK-DEVELOPER/flag-icons/archive/main.zip) the whole project as is or install it via npm or Yarn:
 
 ```bash
-npm install flag-icons
+npm install @gmlk-developer/flag-icons
 # or
-yarn add flag-icons
+yarn add @gmlk-developer/flag-icons
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ yarn add flag-icons
 First, you need to import css:
 
 ```js
-import "/node_modules/flag-icons/css/flag-icons.min.css";
+import "/node_modules/@gmlk-developer/flag-icons/css/flag-icons.min.css";
 ```
 
 or use CDN:
@@ -32,12 +32,12 @@ or use CDN:
 or use SASS:
 
 ```scss
-@use "node_modules/flag-icons/sass/flag-icons";
+@use "node_modules/@gmlk-developer/flag-icons/sass/flag-icons";
 
 // or with custom configuration
-@use "node_modules/flag-icons/sass/flag-icons" with (
+@use "node_modules/@gmlk-developer/flag-icons/sass/flag-icons" with (
   // Override path to flags directory
-  $flag-icons-path: "node_modules/flag-icons/flags",
+  $flag-icons-path: "node_modules/@gmlk-developer/flag-icons/flags",
 
   // Include only specific country flags
   $flag-icons-included-countries: ("gr", "de", "gb")

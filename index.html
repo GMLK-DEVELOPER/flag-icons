@@ -813,11 +813,11 @@
             </div>
 
             <div class="install-box">
-              <code id="install-command">npm install flag-icons</code>
+              <code id="install-command">npm install @gmlk-developer/flag-icons</code>
               <button
                 class="copy-btn"
                 type="button"
-                data-copy="npm install flag-icons"
+                data-copy="npm install @gmlk-developer/flag-icons"
                 aria-label="Copy install command"
               >
                 <i class="bi bi-clipboard"></i>
@@ -942,13 +942,13 @@
               <span class="code-label">JavaScript / Module</span>
               <button
                 class="code-copy-btn"
-                data-code='import "/node_modules/flag-icons/css/flag-icons.min.css";'
+                data-code='import "/node_modules/@gmlk-developer/flag-icons/css/flag-icons.min.css";'
               >
                 <i class="bi bi-clipboard"></i> Copy
               </button>
             </div>
             <div class="code-content">
-              <pre><span class="token keyword">import</span> <span class="token string">"/node_modules/flag-icons/css/flag-icons.min.css"</span>;</pre>
+              <pre><span class="token keyword">import</span> <span class="token string">"/node_modules/@gmlk-developer/flag-icons/css/flag-icons.min.css"</span>;</pre>
             </div>
           </div>
 
@@ -977,10 +977,10 @@
               <span class="code-label">SASS</span>
               <button
                 class="code-copy-btn"
-                data-code='@use "node_modules/flag-icons/sass/flag-icons";
+                data-code='@use "node_modules/@gmlk-developer/flag-icons/sass/flag-icons";
 
-@use "node_modules/flag-icons/sass/flag-icons" with (
-  $flag-icons-path: "node_modules/flag-icons/flags",
+@use "node_modules/@gmlk-developer/flag-icons/sass/flag-icons" with (
+  $flag-icons-path: "node_modules/@gmlk-developer/flag-icons/flags",
   $flag-icons-included-countries: ("gr", "de", "gb")
 );'
               >
@@ -988,12 +988,12 @@
               </button>
             </div>
             <div class="code-content">
-              <pre><span class="token keyword">@use</span> <span class="token string">"node_modules/flag-icons/sass/flag-icons"</span>;
+              <pre><span class="token keyword">@use</span> <span class="token string">"node_modules/@gmlk-developer/flag-icons/sass/flag-icons"</span>;
 
 <span class="token comment">// or with custom configuration</span>
-<span class="token keyword">@use</span> <span class="token string">"node_modules/flag-icons/sass/flag-icons"</span> <span class="token keyword">with</span> (
+<span class="token keyword">@use</span> <span class="token string">"node_modules/@gmlk-developer/flag-icons/sass/flag-icons"</span> <span class="token keyword">with</span> (
   <span class="token comment">// Override path to flags directory</span>
-  $flag-icons-path: <span class="token string">"node_modules/flag-icons/flags"</span>,
+  $flag-icons-path: <span class="token string">"node_modules/@gmlk-developer/flag-icons/flags"</span>,
 
   <span class="token comment">// Include only specific country flags</span>
   $flag-icons-included-countries: (<span class="token string">"gr"</span>, <span class="token string">"de"</span>, <span class="token string">"gb"</span>)
@@ -1196,8 +1196,8 @@ background-repeat: no-repeat;</pre>
       let tooltipTimeout;
       let currentFilter = "all";
       let installCommands = {
-        npm: "npm install flag-icons",
-        yarn: "yarn add flag-icons",
+        npm: "npm install @gmlk-developer/flag-icons",
+        yarn: "yarn add @gmlk-developer/flag-icons",
       };
 
       const copyText = async (text) => {
